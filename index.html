@@ -1,1 +1,40 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCHOOL ORGANISER</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Semantic header -->
+     <header>
+        <h1>SCHOOL ORGANISER</h1>
+        <nav>
+            <ul>
+                <li> <a href="index.html" class="active">Dashboard</a></li>
+                <li> <a href="insert-course.html">Insert course</a></li>
+                <li> <a href="about.html">About</a></li>
+
+            </ul>
+        </nav>
+
+     </header>
+     <main>
+        <section id="welcome-section">
+            <h2>Your Academic overview</h2>
+             <p id="date-display"></p>   <!-- Dtnamic Js content -->
+            
+        </section>
+
+        <section id="course-display">
+            <h3>Enrolled Courses</h3>
+            <div id="course-list-container" class="grid-container">
+                <!-- Courses will be injected via Javascript -->
+            </div>
+
+        </section>
+     </main>
+    
+</body>
+</html>
