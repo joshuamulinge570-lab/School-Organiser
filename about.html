@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCHOOL ORGANISER</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Semantic header -->
+     <header>
+        <h1>SCHOOL ORGANISER</h1>
+        <nav>
+            <ul>
+                <li> <a href="index.html" class="active">Dashboard</a></li>
+                <li> <a href="insert-course.html">Insert course</a></li>
+                <li> <a href="about.html">About</a></li>
+
+            </ul>
+        </nav>
+
+     </header>
+     <main>
+        <section class="info-section">
+            <h2>Project overview</h2>
+            <p>School Organiser was developed to help students manage their academic workload by providing
+                a centralised dashboard for course tracking.
+            </p>
+            <div class="stats-box">
+                <h3>Current Statistics</h3>
+                <!-- Javascript will update the span below -->
+                 <p>You currently have <strong id="course-count">0</strong> courses saved in your local storage</p> 
+            </div>
+            <article>
+                <h3>Technologies Used</h3>
+                <ul>
+                <li><strong>HTML5:</strong>Semantic structure for accessibility</li>
+                 <li><strong>CSS:</strong>Flexbox and Grid for responsive design </li>
+                    <li><strong>JAVASCRIPT:</strong>DOM Manipulation and Local Storage persistence</li>
+                </ul>
+               </article>
+
+        </section>
+     </main>
+     <footer>
+        <p>2026 SCHOOL ORGANISER PROJECT</p>
+        <!-- Linking the same script file to handle the logic -->
+         <script src="script.js"></script>
+
+     </footer>
