@@ -13,8 +13,28 @@ const courseForm = document.getElementById('course-form');
 if (courseForm) {
     courseForm.addEventListener('submit', (e) => {
         e.preventDefault(); //Prevent Page Reload
-    } )
+    
+        const name = document.getElementById('courseName').value;
+        const instructor = document.getElementById('instructtor').value;
+        const nameError = document.getElementById('nameError');
+
+        //VALIDATION CHECK
+        if (name.length < 3) {
+            nameError.innerText = "Course Name is too short!";
+            return;
+        }
+
+        const courses = JSON.parse(localStorage.getItem('courses')) || [];
+        courses.push({ name, instructor });
+        localStorage.setItem('courses', JSON.stringify(courses));
+
+        courseForm.reset();
+        alert("Course saved!");
+    });
 }
+
+        
+        
 
 //Get Values
 const name = document.getElementById('courseName').value;
