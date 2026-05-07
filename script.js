@@ -12,75 +12,69 @@ document.addEventListener('DOMContentLoaded', () => {
 const courseForm = document.getElementById('course-form');
 if (courseForm) {
     courseForm.addEventListener('submit', (e) => {
-        e.preventDefault(); //Prevent Page Reload
-    
-        const name = document.getElementById('courseName').value;
-        const instructor = document.getElementById('instructtor').value;
-        const nameError = document.getElementById('nameError');
+      e.preventDefault(); //Prevent Page Reload
 
-        //VALIDATION CHECK
-        if (name.length < 3) {
-            nameError.innerText = "Course Name is too short!";
-            return;
-        }
+      //Get Values
+      const name = document.getElementById("courseName").value;
+      const instructor = document.getElementById("instructor").value;
+        const nameError = document.getElementById("nameError");
+        const successMessage = document.getElementById('success-message');
 
-        const courses = JSON.parse(localStorage.getItem('courses')) || [];
+      //VALIDATION CHECK
+      if (name.length < 3) {
+        nameError.innerText = "Course Name is too short!";
+        return;
+      }
+
+      //Persistence: Retrieve existing data or create empty array
+      const courses = JSON.parse(localStorage.getItem("courses")) || [];
+
+      //Add New Object
         courses.push({ name, instructor });
-        localStorage.setItem('courses', JSON.stringify(courses));
+        
+       // Save back to local Storage
+      localStorage.setItem("courses", JSON.stringify(courses));
 
         courseForm.reset();
-        alert("Course saved!");
+        
+        //UI Feedback
+        if (successMessage) {
+            successMessage.style.display = 'block';
+        }
+      alert("Course saved!");
     });
 }
 
-        
-        
 
-//Get Values
-const name = document.getElementById('courseName').value;
-const instructor = document.getElementById('instructor').value;
 
-//Form Validation
-if (name.length < 3) {
-    document.getElementById('nameError').innerText = "Course name too short!"
-    return;  
-}
-
-//Persistence: Retrieve existing data or create empty array
-const courses = JSON.parse(localStorage.getItem('courses')) || [];
-
-//Add New Object
-courses.push({ name, instructor });
-
-//Save back to local Storage
-localStorage.setItem('courses', JSON.stringify(courses));
-
-//UI Feedback
-document.getElementById('success-message').style.display = 'block';
-courseForm.reset();
-;
 
 
 //-- Logic for Dashboard )Index) Page ---
 const container = document.getElementById('course-list-container');
 if (container) {
     const storedCourses = JSON.parse(localStorage.getItem('courses')) || [];
-}
-if (storedCourses.length === 0) {
-    container.innerHTML = "<p>No courses added yet.Go to insert course'!</p>";
 
-} else {
-    //Dynamic display using DOM Manipulation
-    storedCourses.forEach(course => {
-        const card = document.createElement('div');
-        card.className = 'course-card';
-        card.innerHTML = `
+
+    //Check if Array is empty
+    if (storedCourses.length === 0) {
+        container.innerHTML = "<p>No courses added yet.Go to insert course'!</p>";
+
+    
+    } else {
+        //Dynamic display using DOM Manipulation
+        container.innerHTML = "";
+        storedCourses.forEach(course => {
+            const card = document.createElement('div');
+            card.className = 'course-card';
+            card.innerHTML = `
                        <h4>${course.name}</h4>
                        <p>Instructor:${course.instructor}</p>
                        `;
-        container.appendChild(card);
-    });
+            container.appendChild(card);
+        });
+    }
 }
+
 
 
 
