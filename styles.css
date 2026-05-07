@@ -1,98 +1,93 @@
-/* General Reset */
-*{margin: 0;
- padding: 0;
- box-sizing: border-box;
- font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-body{
-background-color: white;
-color: black;
-
+body {
+  background-color: white;
+  color: black;
 }
 
-
-header{
-background: blue;
-color: white;
-padding: 1rem;
-display: flex;
-justify-content: space-between;
-align-items: center;
+header {
+  background: blue;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-nav ul{
-display: flex;
-list-style: none;
+nav ul {
+  display: flex;
+  list-style: none;
 }
 nav ul li a {
-color: orange;
-margin-left: 20px;
-text-decoration: none;
-
+  color: orange;
+  margin-left: 20px;
+  text-decoration: none;
 }
 nav ul li a.active {
-border-bottom: 2px solid darkblue;
+  border-bottom: 2px solid darkblue;
 }
 
-
-.grid-container{
-display: grid;
-grid-template-columns: repeat(autofill,minimax(250px, 1fr));
-gap: 20px;
-padding: 20px;
-
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(autofill, minimax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
 }
 
-.course-card{
-background: black;
-padding: 15px;
-border-radius: 8px;
-box-shadow: 0 4px 6px rgba(0, 0, 0, 1);
+.course-card {
+  background: black;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 1);
 }
 
-.form-section{
-max-width: 500px;
+.form-section {
+  max-width: 500px;
 }
 
-.form-group{
-margin-bottom: 15px;
+.form-group {
+  margin-bottom: 15px;
 }
 
-input{
-width: 100%;   
-padding: 8px;
-margin-top: 5px;
+input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
 }
-.error{
-color: red;
-font-size: 0.8rem;
+.error {
+  color: red;
+  font-size: 0.8rem;
 }
-@media (max-width: 600px){
-header{
-flex-direction: column;
-text-align: center;
-}
-nav ul{
-margin-top: 10px;
-}
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+  nav ul {
+    margin-top: 10px;
+  }
 }
 
-.info-section{
-max-width: 800px;
-margin: 40px auto;
-padding: 20px;
-line-height: 1.6;
+.info-section {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  line-height: 1.6;
 }
-.stats-box{
-background: white;
-border-left: 5px solid lightskyblue;
-padding: 20px;
-margin: 20px 0;
-border-radius: 4px;
+.stats-box {
+  background: white;
+  border-left: 5px solid lightskyblue;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 4px;
 }
-.info-section h3{
-margin-top: 20px;
-color: darkblue;
+.info-section h3 {
+  margin-top: 20px;
+  color: darkblue;
 }
-.info-section ul{
-margin-left: 20px;
+.info-section ul {
+  margin-left: 20px;
 }
