@@ -12,7 +12,7 @@ it saves the course and instructor in the local storage
 1.Clone the repository
 2.Navigate into the project folder cd final-project
 3.Open the project
-4.live link-https://github.com/joshuamulinge570-lab/School-Organiser
+4.live link-https://joshuamulinge570-lab.github.io/School-Organiser/
 
 #TECHNOLGIES USED
 HTML
